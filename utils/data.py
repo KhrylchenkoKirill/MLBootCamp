@@ -11,7 +11,6 @@ coords = ['Xmin', 'Ymin', 'Xbias', 'Ybias']
 
 def load_data(paths, normalize=True, bias=True, delete_zero=True):
     # loading the data
-    
     train = pd.read_csv(paths['train'])
     test = pd.read_csv(paths['test'])
     targets = pd.read_csv(paths['targets'])
@@ -65,7 +64,9 @@ def load_data(paths, normalize=True, bias=True, delete_zero=True):
     else:
         return train, test, targets
 
+    
 class TransDataset(Dataset):
+    
     def __init__(self, trans_df, targets=None):
         self.features = ['Xmin', 'Ymin', 'Xbias', 'Ybias']
         self.data = trans_df[self.features].values.astype(np.float32)
@@ -87,7 +88,9 @@ class TransDataset(Dataset):
         else:
             return obj
 
+        
 class Inference:
+    
     def __init__(self, make_dataset):
         self.make_dataset = make_dataset
         
@@ -111,6 +114,7 @@ class Inference:
         preds_df['Ymax'] = preds_df['Ymin'] + preds_df['Ybias']
         preds_df.drop(['Xbias', 'Ybias'], axis=1, inplace=True)
         return preds_df
+    
     
 def denormalize(df, stats, rounded=True):
     df = df.copy()
