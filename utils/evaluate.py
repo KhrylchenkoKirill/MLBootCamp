@@ -2,7 +2,7 @@ import torch
 import torch.nn.functional as F
 
 def get_miou(xmin, ymin, xbias, ybias, xmin_true, ymin_true, xbias_true, ybias_true):
-    
+    # calculates miou
     xA, _ = torch.max(torch.stack([xmin, xmin_true]), dim=0)
     yA, _ = torch.max(torch.stack([ymin, ymin_true]), dim=0)
     xB, _ = torch.min(torch.stack([xmin + xbias, xmin_true + xbias_true]), dim=0)
