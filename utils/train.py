@@ -190,6 +190,7 @@ class Validator:
     
     
 class HoldoutValidator:
+    
     def __init__(self, data, targets, n_splits=10, seed=15, inner_seed=13, ):
         self.r = np.random.RandomState(seed)
         items = self.r.permutation(data['item'].unique()).tolist()
