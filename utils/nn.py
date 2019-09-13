@@ -2,6 +2,7 @@ from torch import nn
 import torch
 
 class LinearModel(nn.Module):
+    
     def __init__(self, n_features):
         super().__init__()
         self.cls = nn.Linear(n_features, 4)
