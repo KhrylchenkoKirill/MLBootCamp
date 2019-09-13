@@ -10,6 +10,7 @@ from utils.evaluate import calculate_miou, get_iou, calculate_minmax_loss, get_d
 from collections import defaultdict
 
 class Trainer:
+    
     def __init__(self, model, criterion, optimizer=None, val_criterion=None):
         self.model = model
         self.optimizer = optimizer if optimizer is not None else torch.optim.Adam(model.parameters(), 1e-3)
@@ -116,6 +117,7 @@ class Trainer:
 get_df = lambda df, items: df.loc[df['item'].isin(set(items))].copy().reset_index(drop=True)
 
 class Validator:
+    
     def __init__(self, data, targets, n_splits=10, seed=15):
         self.data = data.copy()
         self.targets = targets
