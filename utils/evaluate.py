@@ -34,7 +34,7 @@ def get_iou(boxes, values=True):
     boxAArea = area(boxA)
     boxBArea = area(boxB)
     
-    if (boxAArea == 0 or boxBArea == 0):
+    if boxAArea == 0 or boxBArea == 0:
         return 0
         
     xA = max(boxA[0], boxB[0])
