@@ -74,9 +74,7 @@ class TransDataset(Dataset):
         self.items = trans_df['item'].values
         self.len = self.data.shape[0]
         self.n_features = len(self.features)
-        self.targets = None
-        if targets is not None:
-            self.targets = targets.set_index('item').loc[self.items].values.astype(np.float32)
+        self.targets = targets.set_index('item').loc[self.items].values.astype(np.float32) if targets is not None else None
         
     def __len__(self):
         return self.len
