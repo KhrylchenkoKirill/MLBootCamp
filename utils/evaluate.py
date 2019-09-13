@@ -15,7 +15,6 @@ def get_miou(xmin, ymin, xbias, ybias, xmin_true, ymin_true, xbias_true, ybias_t
     loss = -(interArea / (predArea + gtArea - interArea)).mean() # try log
     return loss
 
-
 def calculate_miou(preds, targets, l2=0.):
     loss = get_miou(
         preds[:, 0], preds[:, 1], preds[:, 2], preds[:, 3],
@@ -44,8 +43,6 @@ def get_iou(boxes, values=True):
     yB = min(boxA[3] + boxA[1], boxB[3] + boxB[1])
 
     interArea = max(0, xB - xA) * max(0, yB - yA)
-
-    
     iou = interArea / float(boxAArea + boxBArea - interArea)
     return iou
 
