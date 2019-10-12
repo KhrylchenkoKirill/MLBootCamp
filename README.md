@@ -1,6 +1,7 @@
 # [ML Boot Camp 9](https://mlbootcamp.ru/round/21/rating/)
 ### 12'th place solution
 **Author:** [Ambitious](https://mlbootcamp.ru/profile/Ambitious/)
+This solution gives 7'th place with 40 averaged seeds instead of 10.
 
 ## Notebooks
 
