@@ -1,5 +1,5 @@
 # [ML Boot Camp 9](https://mlbootcamp.ru/round/21/rating/)
-### 8'th place solution
+### 12'th place solution
 **Author:** [Ambitious](https://mlbootcamp.ru/profile/Ambitious/)
 
 ## Notebooks
